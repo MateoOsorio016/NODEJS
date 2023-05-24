@@ -54,7 +54,7 @@ form.addEventListener('submit', e=>{
             icon: 'error',
             confirmButtonText: 'Aceptar',
           });
-    }else if(frecue.value <=0){
+    }else if(!frecue.value.match(validarNombre)){
         Swal.fire({
             title: 'Error',
             text: 'Frecuencia de pago incorrecta',
