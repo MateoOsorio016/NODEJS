@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
   <style>
     body {
         color: #566787;
@@ -308,7 +311,7 @@
   <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form>
+        <form id="formC">
           <div class="modal-header">						
             <h4 class="modal-title">Agregar contrato</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -316,43 +319,43 @@
           <div class="modal-body">					
             <div class="form-group">
               <label>Numero de Contrato</label>
-              <input type="number" class="form-control" required>
+              <input type="number" class="form-control" id="numerodecontrato" required>
             </div>
             <div class="form-group">
               <label>Empresa</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="empresa" required>
             </div>
             <div class="form-group">
               <label>Fecha inicio</label>
-              <input type="date" class="form-control" required>
+              <input type="date" class="form-control" id="fechaini"required>
             </div>
             <div class="form-group">
               <label>Fecha fin</label>
-              <input type="date" class="form-control" required>
+              <input type="date" class="form-control" id="fechafin" required>
             </div>
             <div class="form-group">
               <label>Frecuencia de pago</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="fre" required>
             </div>
             <div class="form-group">
               <label>Producto</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="producto" required>
             </div>
             <div class="form-group">
               <label>Medida</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="medida" required>
             </div>
             <div class="form-group">
               <label>Cantidad</label>
-              <input type="number" class="form-control" required>
+              <input type="number" class="form-control" id="cantidad" required>
             </div>
             <div class="form-group">
               <label>Total</label>
-              <input type="number" class="form-control" required>
+              <input type="number" class="form-control" id="total"required>
             </div>
             <div class="form-group">
               <label>IVA</label>
-              <input type="number" class="form-control" required>
+              <input type="number" class="form-control" id="IVA" required>
             </div>				
           </div>
           <div class="modal-footer">
@@ -448,6 +451,7 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/vericon.js"></script>
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
