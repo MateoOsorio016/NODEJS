@@ -1,29 +1,63 @@
-const formularioLogin = document.querySelector('#loginBurdeos')
 
-formularioLogin.addEventListener('submit', e =>{
-    const validarEmail = /[a-zA-Z0-9\_\.]*@[a-zA-Z09]*\.[a-zA-Z]{3,}/
-    e.preventDefault();
-    const email = e.target.email.value
-    const pass = e.target.pass.value
-    console.log(e)
-    try{
-        if(email === '' || pass === ''){
-            throw 'Todos los campos son obligatorios'
-        }
 
-        if(!validarEmail.test(email)){
-            throw 'Formato de email invalido'
-        }
+document.addEventListener('DOMContentLoaded', function() {
+const formCliente = document.querySelector('#formClientes');
+formCliente.addEventListener('submit', e => {
+  e.preventDefault(); 
 
-        if(pass.length < 8){
-            throw 'La clave debe tener mas de 8 digitos'
-        }
-        window.location = 'main'
-    }catch(err){
-        alert(err)
-    }
-})
-const formularioproducto = document.querySelector('#productoform')
+  const name = document.querySelector('#nombreC');
+  const apellidos = document.querySelector('#apellidoC');
+  const correo = document.querySelector('#emailC');
+  const telefono = document.querySelector('#telefonoC');
+  const pattern = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
+  const ExpRegSoloNumeros = /^[0-9]+$/;
+  const validarNombre = /^[A-Z]+$/i;
+
+  if (!name.value.match(validarNombre)) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Nombre Inválido',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  } else if (!apellidos.value.match(validarNombre)) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Apellidos Inválidos',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  } else if (!correo.value.match(pattern)) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Email Inválido',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  } else if (!telefono.value.match(ExpRegSoloNumeros)) {
+    Swal.fire({
+      title: 'Error',
+      text: 'Número Inválido',
+      icon: 'error',
+      confirmButtonText: 'Aceptar',
+    });
+  } else {
+    Swal.fire({
+      title: 'Exitoso',
+      text: 'Registrado con éxito',
+      icon: 'success',
+      confirmButtonText: 'Aceptar',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Redirigir a una vista diferente
+        window.location.href = 'clientes';
+      }
+    });
+  }
+});
+});
+
+/*const formularioproducto = document.querySelector('#productoform')
 
 formularioproducto.addEventListener('submit', e =>{
     const validarNombre = /^[A-Z]+$/i
@@ -47,4 +81,4 @@ formularioproducto.addEventListener('submit', e =>{
     }catch(err){
         alert(err)
     }
-})
+})*/

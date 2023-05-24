@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
   <style>
     body {
         color: #566787;
@@ -282,7 +284,7 @@
   <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form>
+        <form id="formprov">
           <div class="modal-header">						
             <h4 class="modal-title">Agregar proveedor</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -290,31 +292,43 @@
           <div class="modal-body">					
             <div class="form-group">
               <label>Nit</label>
-              <input type="text" class="form-control" required>
+              <input type="number" class="form-control" required>
             </div>
             <div class="form-group">
               <label>Proveedor</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="proveedor" required>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" required>
+              <input type="text" class="form-control" id="proveedorE" required>
             </div>
             <div class="form-group">
               <label>Teléfono</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="telefonoP" required>
             </div>
             <div class="form-group">
-              <label>Categoria</label>
-              <select name="Estado" id="" required>
+              <label>Cantidad</label>
+              <input type="number" class="form-control" id="cantidadP" required>
+            </div>
+            <div class="form-group">
+              <label>Factura</label>
+              <input type="number" class="form-control" id="facturaP" required>
+            </div>
+             <div class="form-group">
+              <label>Fecha</label>
+              <input type="date" class="form-control" id="fechaP" required>
+            </div>
+            <div class="form-group">
+              <label>Estado</label>
+              <select name="Estado" id="estado">
                 <option value="">Activo</option>
                 <option value="">Inactivo</option>
               </select>
             </div>
             <div class="form-group">
               <label>Categoria</label>
-              <select name="Categoria" id="" required>
-                <option value="">Mayorsita</option>
+              <select name="Categoria" id="categoria">
+                <option value="">Mayorista</option>
                 <option value="">Exportador</option>
               </select>
             </div>				
@@ -390,6 +404,7 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/veriprov.js"></script>
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();

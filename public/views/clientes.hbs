@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+
   <style>
     body {
         color: #566787;
@@ -274,7 +278,7 @@
   <div id="addEmployeeModal" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form>
+        <form id="formClientes">
           <div class="modal-header">						
             <h4 class="modal-title">Agregar cliente</h4>
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -282,19 +286,19 @@
           <div class="modal-body">					
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="nombreC" required>
             </div>
             <div class="form-group">
               <label>Apellidos</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="apellidoC" required>
             </div>
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control" required>
+              <input type="text" class="form-control" id="emailC" required>
             </div>
             <div class="form-group">
               <label>Teléfono</label>
-              <input type="text" class="form-control" required>
+              <input type="text" class="form-control" id="telefonoC" required>
             </div>				
           </div>
           <div class="modal-footer">
@@ -366,10 +370,10 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/veri.js"></script>
   <script>
     $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip();
     });
   </script>
-</body>
 </html>
